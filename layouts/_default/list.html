@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  {{ .Content }}
+  {{ range .Pages }}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h3><a href="{{ .RelPermalink }}" class="text-navy text-decoration-none">{{ .Title }}</a></h3>
+      {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      <a href="{{ .RelPermalink }}" class="btn btn-navy btn-sm">Read More</a>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

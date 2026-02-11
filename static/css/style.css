@@ -1,0 +1,141 @@
+:root {
+  --navy: #1a2744;
+  --navy-light: #2a3a5c;
+  --gold: #c9a84c;
+  --gold-light: #e0c66b;
+  --cream: #f8f6f0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.bg-navy { background-color: var(--navy) !important; }
+.bg-navy-light { background-color: var(--navy-light) !important; }
+.bg-cream { background-color: var(--cream) !important; }
+.text-navy { color: var(--navy) !important; }
+.text-gold { color: var(--gold) !important; }
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+}
+.btn-gold:hover {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--navy);
+}
+.btn-navy {
+  background-color: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.btn-navy:hover {
+  background-color: var(--navy-light);
+  border-color: var(--navy-light);
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: white;
+  padding: 5rem 0;
+}
+.hero h1 { font-size: 2.75rem; }
+.hero .lead { font-size: 1.25rem; opacity: 0.9; }
+
+/* Page Headers */
+.page-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: white;
+  padding: 3rem 0;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card-header.bg-navy { border-bottom: 3px solid var(--gold); }
+
+/* Fee Table */
+.fee-table th { background-color: var(--navy); color: white; }
+.fee-table .highlight-row { background-color: #fff9e6; }
+
+/* Team Grid */
+.team-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+}
+
+/* Blog/Insights */
+.insight-card { border-left: 4px solid var(--gold); }
+.insight-date { color: var(--gold); font-weight: 600; font-size: 0.85rem; }
+
+/* Disclosure Styling */
+.disclosure-section {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.disclosure-section h3 { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; }
+
+/* Testimonial */
+.testimonial {
+  background-color: var(--cream);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+.testimonial cite { font-style: normal; font-weight: 600; color: var(--navy); }
+
+/* Navbar active state */
+.navbar-nav .nav-link { font-weight: 500; letter-spacing: 0.02em; }
+.navbar-nav .nav-link:hover { color: var(--gold) !important; }
+
+/* Section spacing */
+.section-padding { padding: 4rem 0; }
+
+/* Compliance bar */
+.compliance-bar {
+  background-color: var(--cream);
+  border-top: 1px solid #dee2e6;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Login page */
+.login-box {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Career posting */
+.career-posting {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+.career-posting:hover { border-color: var(--gold); }

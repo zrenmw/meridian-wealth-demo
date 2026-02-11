@@ -1,0 +1,120 @@
+{{ define "main" }}
+<!-- Hero -->
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">{{ .Site.Params.tagline }}</h1>
+    <p class="lead col-lg-8 mx-auto mb-4">For over two decades, Meridian Wealth Advisors has helped high-net-worth individuals and families navigate complex financial landscapes with clarity and confidence.</p>
+    <a href="{{ "services/" | relURL }}" class="btn btn-gold btn-lg me-2">Our Services</a>
+    <a href="{{ "contact/" | relURL }}" class="btn btn-outline-light btn-lg">Schedule a Consultation</a>
+  </div>
+</section>
+
+<!-- Key Stats -->
+<section class="bg-cream section-padding">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .aum }}{{ else }}$2.1B{{ end }}</h2>
+        <p class="text-muted">Assets Under Management</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .client_families }}{{ else }}340+{{ end }}</h2>
+        <p class="text-muted">Client Families</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .years_avg_experience }}{{ else }}18{{ end }}</h2>
+        <p class="text-muted">Avg. Years Experience</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="text-navy fw-bold">{{ .Site.Params.foundedYear }}</h2>
+        <p class="text-muted">Year Founded</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section-padding">
+  <div class="container">
+    <h2 class="text-center text-navy mb-5">Comprehensive Wealth Management</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center p-4">
+            <h4 class="text-navy">Wealth Planning</h4>
+            <p>Holistic financial planning that aligns your investments with your life goals and values.</p>
+            <a href="{{ "services/wealth-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center p-4">
+            <h4 class="text-navy">Retirement Planning</h4>
+            <p>Strategic retirement planning to secure your financial independence and legacy.</p>
+            <a href="{{ "services/retirement-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center p-4">
+            <h4 class="text-navy">Estate Planning</h4>
+            <p>Thoughtful estate strategies that protect and transfer your wealth efficiently.</p>
+            <a href="{{ "services/estate-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Market Commentary -->
+<section class="bg-cream section-padding">
+  <div class="container">
+    <h2 class="text-center text-navy mb-5">Latest Market Commentary</h2>
+    <div class="row">
+      {{ $insights := where .Site.RegularPages "Section" "insights" }}
+      {{ range first 3 $insights.ByPublishDate.Reverse }}
+      <div class="col-md-4 mb-4">
+        <div class="card insight-card h-100">
+          <div class="card-body">
+            <p class="insight-date">{{ .PublishDate.Format "January 2, 2006" }}</p>
+            <h5><a href="{{ .RelPermalink }}" class="text-navy text-decoration-none">{{ .Title }}</a></h5>
+            {{ with .Params.summary }}<p class="small text-muted">{{ . }}</p>{{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="text-center mt-3">
+      <a href="{{ "insights/" | relURL }}" class="btn btn-navy">View All Insights</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="section-padding">
+  <div class="container">
+    <div class="col-lg-8 mx-auto">
+      {{ with .Site.Data.testimonials }}
+      {{ range .featured }}
+      <div class="testimonial">
+        <p class="mb-2">"{{ .quote }}"</p>
+        <cite>— {{ .author }}</cite>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-navy text-white text-center section-padding">
+  <div class="container">
+    <h2 class="mb-3">Ready to Take the Next Step?</h2>
+    <p class="lead mb-4 opacity-75">Schedule a complimentary consultation with one of our senior advisors.</p>
+    <a href="{{ "contact/" | relURL }}" class="btn btn-gold btn-lg">Contact Us Today</a>
+  </div>
+</section>
+{{ end }}

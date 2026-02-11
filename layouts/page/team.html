@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <p>Our team combines decades of experience in investment management, financial planning, tax strategy, and estate planning. Every team member shares our commitment to fiduciary excellence and personalized service.</p>
+
+  {{ partial "team-grid.html" . }}
+
+  <hr class="my-5">
+
+  <h2>Join Our Team</h2>
+  <p>We're always looking for talented professionals who share our commitment to client service. Visit our <a href="{{ "careers/" | relURL }}">Careers</a> page to see current openings.</p>
+</div>
+{{ end }}

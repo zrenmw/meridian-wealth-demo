@@ -1,0 +1,36 @@
+<footer class="bg-navy text-white pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold">Meridian Wealth Advisors</h5>
+        <p class="small">{{ .Site.Params.address }}</p>
+        <p class="small">{{ .Site.Params.phone }}<br>{{ .Site.Params.email }}</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="{{ "about/" | relURL }}" class="text-white-50">About Us</a></li>
+          <li><a href="{{ "services/" | relURL }}" class="text-white-50">Services</a></li>
+          <li><a href="{{ "fee-schedule/" | relURL }}" class="text-white-50">Fee Schedule</a></li>
+          <li><a href="{{ "disclosures/" | relURL }}" class="text-white-50">Disclosures & Legal</a></li>
+          <li><a href="{{ "careers/" | relURL }}" class="text-white-50">Careers</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold">Legal</h5>
+        <p class="small text-white-50">{{ with .Site.Data.disclaimers }}{{ .footer_disclaimer }}{{ else }}Meridian Wealth Advisors is a registered investment adviser with the U.S. Securities and Exchange Commission (SEC). Registration does not imply a certain level of skill or training. Past performance is not indicative of future results.{{ end }}</p>
+        <p class="small text-white-50">SEC Registration: {{ .Site.Params.secRegistration }}</p>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="small text-white-50">&copy; {{ now.Year }} Meridian Wealth Advisors. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="{{ "disclosures/" | relURL }}" class="small text-white-50 me-3">Privacy Policy</a>
+        <a href="{{ "disclosures/" | relURL }}" class="small text-white-50">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

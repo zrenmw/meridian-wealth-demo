@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

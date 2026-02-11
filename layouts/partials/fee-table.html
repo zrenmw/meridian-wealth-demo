@@ -1,0 +1,36 @@
+{{ with .Site.Data.fees }}
+<div class="table-responsive">
+  <table class="table fee-table">
+    <thead>
+      <tr>
+        <th>Account Size</th>
+        <th>Annual Management Fee</th>
+        <th>Financial Planning Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range .tiers }}
+      <tr{{ if .highlight }} class="highlight-row"{{ end }}>
+        <td><strong>{{ .range }}</strong></td>
+        <td>{{ .management_fee }}</td>
+        <td>{{ .planning_fee }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+<div class="mt-3">
+  <p class="small text-muted"><strong>Account Minimum:</strong> {{ .minimum }}</p>
+  <p class="small text-muted"><strong>Effective Date:</strong> {{ .effective_date }}</p>
+  {{ with .notes }}
+  <div class="alert alert-light border mt-3">
+    <h6 class="fw-bold">Important Notes:</h6>
+    <ul class="small mb-0">
+      {{ range . }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

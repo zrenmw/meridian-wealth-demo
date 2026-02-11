@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-navy">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{{ "/" | relURL }}">
+      <span class="text-gold">Meridian</span> Wealth Advisors
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+        <li class="nav-item">
+          <a class="nav-link btn btn-gold text-navy ms-2 px-3" href="{{ "client-login/" | relURL }}">Client Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

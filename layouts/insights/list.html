@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="lead mb-0">Market insights, planning strategies, and firm updates</p>
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-8">
+      {{ range .Pages.ByPublishDate.Reverse }}
+      <article class="card insight-card mb-4">
+        <div class="card-body">
+          <p class="insight-date">{{ .PublishDate.Format "January 2, 2006" }}</p>
+          <h3><a href="{{ .RelPermalink }}" class="text-navy text-decoration-none">{{ .Title }}</a></h3>
+          {{ with .Params.author }}<p class="small text-muted">By {{ . }}</p>{{ end }}
+          {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+          <a href="{{ .RelPermalink }}" class="btn btn-navy btn-sm">Read Full Article</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header bg-navy text-white">
+          <h5 class="mb-0">Categories</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-navy">Market Commentary</a></li>
+            <li class="mb-2"><a href="#" class="text-navy">Wealth Planning</a></li>
+            <li class="mb-2"><a href="#" class="text-navy">Tax Strategy</a></li>
+            <li class="mb-2"><a href="#" class="text-navy">Estate Planning</a></li>
+            <li><a href="#" class="text-navy">Firm News</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-header bg-navy text-white">
+          <h5 class="mb-0">Subscribe</h5>
+        </div>
+        <div class="card-body">
+          <p class="small">Receive our weekly market insights directly in your inbox.</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email address">
+            <button class="btn btn-gold">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

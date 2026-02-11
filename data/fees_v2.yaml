@@ -1,0 +1,29 @@
+effective_date: "March 15, 2026"
+minimum: "$250,000"
+tiers:
+  - range: "$250,000 – $499,999"
+    management_fee: "1.15%"
+    planning_fee: "$2,500/year"
+    highlight: false
+  - range: "$500,000 – $999,999"
+    management_fee: "1.00%"
+    planning_fee: "$2,000/year"
+    highlight: false
+  - range: "$1,000,000 – $2,999,999"
+    management_fee: "0.90%"
+    planning_fee: "Included"
+    highlight: true
+  - range: "$3,000,000 – $4,999,999"
+    management_fee: "0.80%"
+    planning_fee: "Included"
+    highlight: false
+  - range: "$5,000,000+"
+    management_fee: "0.70%"
+    planning_fee: "Included"
+    highlight: false
+notes:
+  - "Fees are billed quarterly in arrears based on the average daily balance of the account."
+  - "Financial planning fees are waived for accounts over $1,000,000."
+  - "A one-time onboarding fee of $500 applies to new accounts under $1,000,000."
+  - "Fee schedule is subject to change with 30 days written notice to clients."
+  - "Effective March 15, 2026: Management fees have been reduced across all tiers to reflect improved operational efficiencies."

@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <p>Meridian Wealth Advisors operates on a fee-only basis. We do not receive commissions, referral fees, or any other compensation from third parties. This ensures our advice is always aligned with your best interests.</p>
+
+      <h2>Advisory Fee Schedule</h2>
+      {{ partial "fee-table.html" . }}
+
+      <h2 class="mt-5">How We Bill</h2>
+      <ul>
+        <li>Fees are calculated based on the <strong>average daily balance</strong> of your managed accounts during each calendar quarter.</li>
+        <li>Advisory fees are <strong>billed quarterly in arrears</strong> and deducted directly from your account, unless you request invoicing.</li>
+        <li>You will receive a detailed fee statement each quarter showing the calculation methodology and total amount billed.</li>
+      </ul>
+
+      <h2>What's Included</h2>
+      <p>Our management fee covers:</p>
+      <ul>
+        <li>Ongoing investment management and portfolio rebalancing</li>
+        <li>Quarterly performance reporting</li>
+        <li>Semi-annual advisory meetings (in-person or virtual)</li>
+        <li>Access to our secure client portal</li>
+        <li>Unlimited phone and email support from your advisory team</li>
+        <li>Tax-loss harvesting in taxable accounts</li>
+      </ul>
+
+      <h2>Fee Negotiation</h2>
+      <p>Fees may be negotiable based on the complexity of your financial situation, the total relationship size across related accounts, and other factors. Multi-generational family relationships may qualify for preferential fee arrangements.</p>
+
+      <h2>Additional Costs</h2>
+      <p>In addition to our advisory fees, your accounts will incur:</p>
+      <ul>
+        <li><strong>Custodian fees</strong>: Charged by Charles Schwab (our primary custodian) for account maintenance and transaction processing</li>
+        <li><strong>Fund expenses</strong>: Underlying expense ratios of mutual funds and ETFs held in your portfolio (we favor low-cost options)</li>
+        <li><strong>Trading costs</strong>: Any applicable transaction or trading fees assessed by the custodian</li>
+      </ul>
+      <p><em>For complete fee disclosure, please refer to our <a href="{{ "disclosures/" | relURL }}">Form ADV Part 2A</a>.</em></p>
+    </div>
+  </div>
+</div>
+{{ end }}

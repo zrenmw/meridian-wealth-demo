@@ -1,0 +1,21 @@
+{{ with .Site.Data.team }}
+<div class="row">
+  {{ range .members }}
+  <div class="col-md-4 mb-4">
+    <div class="card team-card text-center h-100">
+      <div class="card-body p-4">
+        <div class="mb-3">
+          <div style="width:150px;height:150px;border-radius:50%;border:3px solid var(--gold);background:var(--navy);display:inline-flex;align-items:center;justify-content:center;">
+            <span class="text-gold fs-2 fw-bold">{{ index (split .name " ") 0 | truncate 1 "" }}{{ index (split .name " ") 1 | truncate 1 "" }}</span>
+          </div>
+        </div>
+        <h5 class="text-navy mb-1">{{ .name }}</h5>
+        <p class="text-gold fw-bold small mb-1">{{ .title }}</p>
+        <p class="small text-muted mb-1">{{ .certifications }}</p>
+        <p class="small">{{ .bio }}</p>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

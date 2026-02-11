@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <p>At Meridian Wealth Advisors, we believe our people are our greatest asset. We foster a collaborative, intellectually stimulating environment where talented professionals can grow and make a meaningful impact on our clients' financial lives.</p>
+
+      <h2>Why Meridian?</h2>
+      <ul>
+        <li><strong>Client-first culture</strong>: Everything we do is guided by our fiduciary commitment</li>
+        <li><strong>Professional development</strong>: We sponsor certifications (CFP®, CFA®, CPA) and provide ongoing education</li>
+        <li><strong>Work-life balance</strong>: Competitive benefits, flexible scheduling, and generous PTO</li>
+        <li><strong>Collaborative environment</strong>: Open-door culture with mentorship from senior advisors</li>
+        <li><strong>Growth opportunity</strong>: We're growing thoughtfully, creating new roles and advancement paths</li>
+      </ul>
+
+      <h2>Open Positions</h2>
+      {{ partial "careers-list.html" . }}
+
+      <h2>General Inquiries</h2>
+      <p>Don't see a position that matches your background? We're always interested in hearing from talented professionals. Send your resume and a brief cover letter to <a href="mailto:careers@meridianwealth.com">careers@meridianwealth.com</a>.</p>
+
+      <p><em>Meridian Wealth Advisors is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</em></p>
+    </div>
+  </div>
+</div>
+{{ end }}

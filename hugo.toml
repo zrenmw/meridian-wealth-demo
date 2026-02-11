@@ -1,0 +1,56 @@
+baseURL = "https://meridianwealth.demo/"
+languageCode = "en-us"
+title = "Meridian Wealth Advisors"
+enableRobotsTXT = true
+
+[params]
+  tagline = "Your Financial Future, Thoughtfully Managed"
+  phone = "(212) 555-0187"
+  email = "info@meridianwealth.com"
+  address = "745 Fifth Avenue, Suite 2100, New York, NY 10151"
+  foundedYear = 2003
+  secRegistration = "801-78452"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 3
+  [[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 4
+  [[menu.main]]
+    name = "Fee Schedule"
+    url = "/fee-schedule/"
+    weight = 5
+  [[menu.main]]
+    name = "Insights"
+    url = "/insights/"
+    weight = 6
+  [[menu.main]]
+    name = "Disclosures"
+    url = "/disclosures/"
+    weight = 7
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 8
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]

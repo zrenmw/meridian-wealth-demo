@@ -1,0 +1,67 @@
+# Content rotation schedule for Meridian Wealth Advisors demo site
+# Each week entry maps to content variant files
+# The activate-scheduled-content.sh script reads this file
+
+rotation_start: "2026-02-16"  # First Monday of rotation
+cycle_length_weeks: 12
+
+weeks:
+  1:
+    description: "Disclosures: updated SEC filing, new risk factor"
+    changes:
+      - source: "disclaimers_v2.yaml"
+        target: "disclaimers.yaml"
+  2:
+    description: "Fee Schedule: management fee reduced"
+    changes:
+      - source: "fees_v2.yaml"
+        target: "fees.yaml"
+  3:
+    description: "Blog: Q1 Market Outlook appears, Q4 Review expires"
+    changes: []
+    # Blog posts use Hugo publishDate/expiryDate - no file swap needed
+  4:
+    description: "Team: new VP added, associate promoted"
+    changes:
+      - source: "team_v2.yaml"
+        target: "team.yaml"
+  5:
+    description: "Disclosures + Footer: privacy data retention clause"
+    changes:
+      - source: "disclaimers_v2.yaml"
+        target: "disclaimers.yaml"
+  6:
+    description: "Wealth Planning: ESG investment options added"
+    changes: []
+    # Content change is in the markdown file via publishDate
+  7:
+    description: "Fee Schedule: new Ultra HNW tier"
+    changes:
+      - source: "fees_v3.yaml"
+        target: "fees.yaml"
+  8:
+    description: "Blog: Estate Tax Changes post appears"
+    changes: []
+    # Blog post uses publishDate
+  9:
+    description: "Careers: two positions posted, one removed"
+    changes:
+      - source: "careers_v2.yaml"
+        target: "careers.yaml"
+  10:
+    description: "Disclosures: ADV updated, DOL fiduciary rule language"
+    changes:
+      - source: "disclaimers_v3.yaml"
+        target: "disclaimers.yaml"
+  11:
+    description: "Team + About: AUM updated, one member removed"
+    changes:
+      - source: "team_v2.yaml"
+        target: "team.yaml"
+  12:
+    description: "Home testimonial rotated, fee minimum raised"
+    changes:
+      - source: "fees_v3.yaml"
+        target: "fees.yaml"
+      - source: "testimonials_v2.yaml"
+        target: "testimonials.yaml"

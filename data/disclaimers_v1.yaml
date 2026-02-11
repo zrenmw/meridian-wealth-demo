@@ -1,0 +1,30 @@
+footer_disclaimer: "Meridian Wealth Advisors is a registered investment adviser with the U.S. Securities and Exchange Commission (SEC). Registration does not imply a certain level of skill or training. Past performance is not indicative of future results. All investing involves risk, including the potential loss of principal."
+
+last_updated: "January 15, 2026"
+
+sec_filing: "ADV Part 2A filed January 15, 2026"
+sec_filing_link: "/documents/adv-part2a-2026.pdf"
+
+risk_factors:
+  - "Market risk: The value of investments may decline due to market conditions."
+  - "Interest rate risk: Changes in interest rates may affect the value of fixed-income investments."
+  - "Inflation risk: The purchasing power of invested assets may be eroded by inflation."
+  - "Liquidity risk: Certain investments may be difficult to sell at fair market value."
+  - "Concentration risk: Portfolios concentrated in specific sectors or asset classes may experience greater volatility."
+
+privacy_policy: |
+  Meridian Wealth Advisors is committed to protecting the privacy and confidentiality of our clients' personal information. We collect only the information necessary to provide our services and do not sell or share client data with third parties except as required by law or regulation. Our complete privacy policy is available upon request.
+
+fiduciary_statement: |
+  As a registered investment adviser, Meridian Wealth Advisors has a fiduciary duty to act in the best interest of our clients. We are committed to providing advice that is suitable, transparent, and aligned with each client's individual financial goals and risk tolerance.
+
+regulatory_disclosures:
+  - title: "Form ADV"
+    description: "Our Form ADV Part 2A (Firm Brochure) provides detailed information about our advisory services, fees, and business practices."
+    link: "/documents/adv-part2a-2026.pdf"
+  - title: "Form CRS"
+    description: "Our Client Relationship Summary provides a brief overview of our services, fees, conflicts of interest, and disciplinary history."
+    link: "/documents/form-crs-2026.pdf"
+  - title: "Code of Ethics"
+    description: "Our Code of Ethics governs personal trading and ensures that client interests are placed ahead of firm and employee interests."
+    link: "/documents/code-of-ethics.pdf"

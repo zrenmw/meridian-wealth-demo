@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <p class="mb-1"><a href="{{ "services/" | relURL }}" class="text-gold text-decoration-none">&larr; All Services</a></p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-8">
+      {{ .Content }}
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header bg-navy text-white">
+          <h5 class="mb-0">Ready to Get Started?</h5>
+        </div>
+        <div class="card-body">
+          <p>Schedule a complimentary consultation to discuss how we can help.</p>
+          <a href="{{ "contact/" | relURL }}" class="btn btn-gold w-100">Contact Us</a>
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-header bg-navy text-white">
+          <h5 class="mb-0">Our Services</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            {{ range where .Site.RegularPages "Section" "services" }}
+            <li class="mb-2"><a href="{{ .RelPermalink }}" class="text-navy">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

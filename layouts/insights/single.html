@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <p class="mb-1"><a href="{{ "insights/" | relURL }}" class="text-gold text-decoration-none">&larr; Back to Insights</a></p>
+    <h1>{{ .Title }}</h1>
+    <p class="lead mb-0">
+      {{ with .Params.author }}By {{ . }} &middot; {{ end }}
+      {{ .PublishDate.Format "January 2, 2006" }}
+    </p>
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      {{ .Content }}
+      <hr>
+      <div class="alert alert-light border mt-4">
+        <p class="small mb-0"><strong>Disclaimer:</strong> The information provided in this article is for general informational purposes only and should not be construed as investment advice. Past performance is not indicative of future results. Please consult with a qualified financial advisor before making any investment decisions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

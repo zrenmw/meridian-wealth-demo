@@ -1,0 +1,69 @@
+name: Build and Deploy Meridian Wealth Demo
+
+on:
+  # Automated weekly rebuild every Monday at 6 AM UTC
+  schedule:
+    - cron: '0 6 * * 1'
+
+  # Deploy on push to main
+  push:
+    branches: [ main ]
+
+  # Manual trigger with optional variant override
+  workflow_dispatch:
+    inputs:
+      force_variant:
+        description: 'Force a specific week variant (1-12)'
+        required: false
+        default: ''
+        type: string
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.142.0'
+          extended: true
+
+      - name: Activate Scheduled Content
+        env:
+          FORCE_VARIANT: ${{ github.event.inputs.force_variant }}
+        run: |
+          chmod +x scripts/activate-scheduled-content.sh
+          ./scripts/activate-scheduled-content.sh
+
+      - name: Build Hugo Site
+        run: hugo --minify
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

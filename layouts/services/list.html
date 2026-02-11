@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="lead mb-0">Tailored financial solutions for every stage of your wealth journey</p>
+  </div>
+</div>
+<div class="container section-padding">
+  {{ .Content }}
+  <div class="row mt-4">
+    {{ range .Pages }}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <h3 class="text-navy">{{ .Title }}</h3>
+          {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+          <a href="{{ .RelPermalink }}" class="btn btn-navy">Learn More</a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

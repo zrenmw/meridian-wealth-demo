@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="lead mb-0">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container section-padding">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <p>Meridian Wealth Advisors is committed to full transparency in all aspects of our business. This page contains important regulatory information, disclosures, and legal notices.</p>
+
+      {{ with .Site.Data.disclaimers }}
+
+      <h2>Regulatory Filings</h2>
+      {{ range .regulatory_disclosures }}
+      <div class="disclosure-section">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <a href="{{ .link }}" class="btn btn-navy btn-sm">Download Document</a>
+      </div>
+      {{ end }}
+
+      <h2>Risk Factors</h2>
+      <p>Investing involves risk, including the potential loss of principal. The following risk factors apply to our advisory services:</p>
+      <div class="disclosure-section">
+        <ul>
+        {{ range .risk_factors }}
+          <li>{{ . }}</li>
+        {{ end }}
+        </ul>
+      </div>
+
+      <h2>Privacy Policy</h2>
+      <div class="disclosure-section">
+        {{ .privacy_policy | markdownify }}
+      </div>
+
+      <h2>Fiduciary Statement</h2>
+      <div class="disclosure-section">
+        {{ .fiduciary_statement | markdownify }}
+      </div>
+
+      <h2>SEC Registration</h2>
+      <p>Meridian Wealth Advisors is registered with the U.S. Securities and Exchange Commission as an investment adviser. SEC registration does not constitute an endorsement of the firm by the Commission, nor does it indicate that the adviser has attained a particular level of skill or ability.</p>
+      <p><strong>SEC Registration Number:</strong> 801-78452<br>
+      <strong>CRD Number:</strong> 174829</p>
+      <p><strong>Last Updated:</strong> {{ .last_updated }}</p>
+
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
