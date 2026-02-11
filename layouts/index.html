@@ -33,35 +33,110 @@
   </div>
 </section>
 
-<!-- Services Overview -->
+<!-- Services Overview — Tabbed (only active tab visible to screenshots) -->
 <section class="section-padding">
   <div class="container">
-    <h2 class="text-center text-navy mb-5">Comprehensive Wealth Management</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center p-4">
-            <h4 class="text-navy">Wealth Planning</h4>
-            <p>Holistic financial planning that aligns your investments with your life goals and values.</p>
-            <a href="{{ "services/wealth-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+    <h2 class="text-center text-navy mb-4">Comprehensive Wealth Management</h2>
+    <p class="text-center text-muted mb-4">Explore our full suite of services tailored to high-net-worth individuals and families.</p>
+    <ul class="nav nav-tabs justify-content-center mb-4" id="servicesTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active text-navy fw-bold" id="wealth-tab" data-bs-toggle="tab" data-bs-target="#wealth-pane" type="button" role="tab">Wealth Planning</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-navy fw-bold" id="retirement-tab" data-bs-toggle="tab" data-bs-target="#retirement-pane" type="button" role="tab">Retirement</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-navy fw-bold" id="estate-tab" data-bs-toggle="tab" data-bs-target="#estate-pane" type="button" role="tab">Estate Planning</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-navy fw-bold" id="tax-tab" data-bs-toggle="tab" data-bs-target="#tax-pane" type="button" role="tab">Tax Strategy</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="servicesTabContent">
+      <div class="tab-pane fade show active" id="wealth-pane" role="tabpanel">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3 class="text-navy">Holistic Wealth Planning</h3>
+            <p>We integrate investment management, tax optimization, and risk management into a single cohesive strategy tailored to your goals. Our evidence-based approach draws on institutional-grade research to build diversified portfolios designed for long-term growth.</p>
+            <ul>
+              <li>Customized Investment Policy Statements</li>
+              <li>Tax-efficient portfolio construction</li>
+              <li>Ongoing monitoring and quarterly rebalancing</li>
+            </ul>
+            <a href="{{ "services/wealth-planning/" | relURL }}" class="btn btn-navy">Learn More</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="card bg-cream border-0 p-4">
+              <p class="text-navy fw-bold mb-2">Minimum Account Size</p>
+              <h3 class="text-gold">{{ with .Site.Data.fees }}{{ .minimum }}{{ else }}$250,000{{ end }}</h3>
+              <p class="small text-muted mb-0">Financial planning fee waived for accounts over $1M</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center p-4">
-            <h4 class="text-navy">Retirement Planning</h4>
-            <p>Strategic retirement planning to secure your financial independence and legacy.</p>
-            <a href="{{ "services/retirement-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+      <div class="tab-pane fade" id="retirement-pane" role="tabpanel">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3 class="text-navy">Strategic Retirement Planning</h3>
+            <p>Retirement planning is about more than accumulating assets. We develop sustainable income strategies that balance your lifestyle needs against longevity risk, inflation, and market volatility.</p>
+            <ul>
+              <li>Retirement readiness assessment and income projections</li>
+              <li>Social Security optimization for you and your spouse</li>
+              <li>Healthcare and long-term care cost planning</li>
+              <li>Tax-efficient distribution strategies across account types</li>
+            </ul>
+            <a href="{{ "services/retirement-planning/" | relURL }}" class="btn btn-navy">Learn More</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="card bg-cream border-0 p-4">
+              <p class="text-navy fw-bold mb-2">Average Client Retirement Assets</p>
+              <h3 class="text-gold">$3.2M</h3>
+              <p class="small text-muted mb-0">Across 401(k), IRA, and taxable accounts</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center p-4">
-            <h4 class="text-navy">Estate Planning</h4>
-            <p>Thoughtful estate strategies that protect and transfer your wealth efficiently.</p>
-            <a href="{{ "services/estate-planning/" | relURL }}" class="btn btn-navy btn-sm">Learn More</a>
+      <div class="tab-pane fade" id="estate-pane" role="tabpanel">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3 class="text-navy">Thoughtful Estate Planning</h3>
+            <p>We work alongside your estate attorney to ensure your wealth is distributed according to your wishes while minimizing tax liability and administrative burden for your heirs.</p>
+            <ul>
+              <li>Trust planning: revocable, irrevocable, GRATs, CRTs</li>
+              <li>Tax-efficient gifting strategies</li>
+              <li>Charitable planning and foundation setup</li>
+              <li>Business succession planning</li>
+            </ul>
+            <a href="{{ "services/estate-planning/" | relURL }}" class="btn btn-navy">Learn More</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="card bg-cream border-0 p-4">
+              <p class="text-navy fw-bold mb-2">2026 Federal Estate Tax Exemption</p>
+              <h3 class="text-gold">$13.99M</h3>
+              <p class="small text-muted mb-0">Per individual — subject to legislative change</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tax-pane" role="tabpanel">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3 class="text-navy">Proactive Tax Strategy</h3>
+            <p>We work year-round to identify opportunities that reduce your current and future tax liability, coordinating closely with your CPA to ensure seamless implementation.</p>
+            <ul>
+              <li>Systematic tax-loss harvesting</li>
+              <li>Multi-year Roth conversion analysis</li>
+              <li>Charitable giving optimization and bunching strategies</li>
+              <li>Multi-state tax planning for complex situations</li>
+            </ul>
+            <a href="{{ "services/tax-strategy/" | relURL }}" class="btn btn-navy">Learn More</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="card bg-cream border-0 p-4">
+              <p class="text-navy fw-bold mb-2">Average Annual Tax Savings</p>
+              <h3 class="text-gold">$47,000</h3>
+              <p class="small text-muted mb-0">Per client family through active tax management</p>
+            </div>
           </div>
         </div>
       </div>
@@ -93,18 +168,136 @@
   </div>
 </section>
 
-<!-- Testimonial -->
+<!-- Testimonials — Carousel (only 1 slide visible per screenshot) -->
 <section class="section-padding">
   <div class="container">
+    <h2 class="text-center text-navy mb-5">What Our Clients Say</h2>
     <div class="col-lg-8 mx-auto">
-      {{ with .Site.Data.testimonials }}
-      {{ range .featured }}
-      <div class="testimonial">
-        <p class="mb-2">"{{ .quote }}"</p>
-        <cite>— {{ .author }}</cite>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+          {{ with .Site.Data.testimonials }}
+          {{ range $i, $t := .featured }}
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ $i }}" {{ if eq $i 0 }}class="active bg-navy"{{ else }}class="bg-navy"{{ end }}></button>
+          {{ end }}
+          {{ end }}
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="bg-navy"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" class="bg-navy"></button>
+        </div>
+        <div class="carousel-inner">
+          {{ with .Site.Data.testimonials }}
+          {{ range $i, $t := .featured }}
+          <div class="carousel-item {{ if eq $i 0 }}active{{ end }}">
+            <div class="testimonial text-center">
+              <p class="fs-5 mb-3">"{{ $t.quote }}"</p>
+              <cite>— {{ $t.author }}</cite>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+          <!-- Additional static testimonials only visible via carousel navigation -->
+          <div class="carousel-item">
+            <div class="testimonial text-center">
+              <p class="fs-5 mb-3">"What sets Meridian apart is their proactive communication. Before every major market event, our advisor reaches out with a clear plan. That kind of attentiveness is rare and invaluable."</p>
+              <cite>— Dr. Susan & Mark L., Clients since 2011</cite>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="testimonial text-center">
+              <p class="fs-5 mb-3">"We interviewed five advisory firms before choosing Meridian. Three years later, our portfolio has outperformed expectations while staying within our risk parameters. The quarterly reviews are thorough and genuinely helpful."</p>
+              <cite>— James & Elena R., Clients since 2021</cite>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" style="filter: invert(20%) sepia(50%) saturate(500%) hue-rotate(190deg);"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" style="filter: invert(20%) sepia(50%) saturate(500%) hue-rotate(190deg);"></span>
+        </button>
       </div>
-      {{ end }}
-      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Accordion (collapsed items invisible to screenshots) -->
+<section class="bg-cream section-padding">
+  <div class="container">
+    <h2 class="text-center text-navy mb-5">Frequently Asked Questions</h2>
+    <div class="col-lg-8 mx-auto">
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              What is the minimum investment to work with Meridian?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our current account minimum is <strong>{{ with .Site.Data.fees }}{{ .minimum }}{{ else }}$250,000{{ end }}</strong> in investable assets. For accounts under $1,000,000, an annual financial planning fee applies. We occasionally make exceptions for clients with significant growth potential or multi-generational family relationships. Please <a href="{{ "contact/" | relURL }}">contact us</a> to discuss your situation.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How is Meridian compensated? Do you earn commissions?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Meridian operates on a <strong>fee-only</strong> basis. We do not earn commissions, referral fees, or any compensation from third parties. Our sole source of revenue is the advisory fees paid directly by our clients. This structure eliminates conflicts of interest and ensures our advice is always in your best interest. See our <a href="{{ "fee-schedule/" | relURL }}">Fee Schedule</a> for complete details.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              What does the onboarding process look like?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our onboarding process typically takes 2-4 weeks and includes: <strong>(1)</strong> An introductory call to understand your goals and determine mutual fit. <strong>(2)</strong> A comprehensive financial data gathering session where we review your accounts, tax returns, estate documents, and insurance policies. <strong>(3)</strong> Development of your personalized Investment Policy Statement and financial plan. <strong>(4)</strong> Account transfers and portfolio implementation. <strong>(5)</strong> A 90-day review meeting to confirm everything is on track. Your dedicated advisory team is available throughout the entire process.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Are you a fiduciary? What does that mean for me?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, Meridian Wealth Advisors is a registered investment adviser (RIA) with the SEC, which means we are legally bound by the <strong>fiduciary standard</strong>. This requires us to act in your best interest at all times, disclose all conflicts of interest, and provide transparent fee information. Unlike broker-dealers who only need to meet a "suitability" standard, we must always put your interests ahead of our own. Read more about <a href="{{ "insights/understanding-fiduciary-duty/" | relURL }}">what fiduciary duty means</a>.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              How often will I hear from my advisory team?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              At minimum, you will receive <strong>quarterly performance reports</strong> and have <strong>semi-annual advisory meetings</strong> (in person or virtual). Beyond that, we proactively reach out when market events, tax law changes, or life events warrant a conversation. Our investment committee publishes regular market commentary, and your advisor is always available by phone or email for ad-hoc questions. During periods of elevated market volatility, we increase our communication frequency.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+              Where are my assets held? Is my money safe?
+            </button>
+          </h3>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Your assets are held at <strong>Charles Schwab</strong>, our primary custodian — one of the largest and most reputable financial institutions in the United States. Meridian never takes custody of your funds. You can log into your Schwab account at any time to view your holdings independently. Schwab accounts are protected by SIPC insurance up to $500,000 (including $250,000 for cash) and Schwab provides additional excess coverage through Lloyd's of London.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
