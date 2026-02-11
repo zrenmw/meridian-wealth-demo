@@ -1,9 +1,9 @@
 name: Build and Deploy Meridian Wealth Demo
 
 on:
-  # Automated weekly rebuild every Monday at 6 AM UTC
+  # Automated daily rebuild at 6 AM UTC (switch to weekly after initial setup: '0 6 * * 1')
   schedule:
-    - cron: '0 6 * * 1'
+    - cron: '0 6 * * *'
 
   # Deploy on push to main
   push:

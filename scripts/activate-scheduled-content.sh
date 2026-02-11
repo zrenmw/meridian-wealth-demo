@@ -31,17 +31,17 @@ else
     START_EPOCH=$(date -j -f "%Y-%m-%d" "$ROTATION_START" "+%s" 2>/dev/null || date -d "$ROTATION_START" "+%s")
     NOW_EPOCH=$(date "+%s")
     DIFF_SECONDS=$((NOW_EPOCH - START_EPOCH))
-    DIFF_WEEKS=$((DIFF_SECONDS / 604800))
+    DIFF_DAYS=$((DIFF_SECONDS / 86400))
 
     # Handle dates before rotation start
-    if [ "$DIFF_WEEKS" -lt 0 ]; then
+    if [ "$DIFF_DAYS" -lt 0 ]; then
         WEEK=1
     else
-        WEEK=$(( (DIFF_WEEKS % CYCLE_LENGTH) + 1 ))
+        WEEK=$(( (DIFF_DAYS % CYCLE_LENGTH) + 1 ))
     fi
     echo "Current date: $(date +%Y-%m-%d)"
-    echo "Weeks since start: $DIFF_WEEKS"
-    echo "Active week: $WEEK (of $CYCLE_LENGTH)"
+    echo "Days since start: $DIFF_DAYS"
+    echo "Active period: $WEEK (of $CYCLE_LENGTH)"
 fi
 
 echo ""
