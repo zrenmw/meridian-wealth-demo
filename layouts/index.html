@@ -1,11 +1,25 @@
 {{ define "main" }}
 <!-- Hero -->
-<section class="hero text-center">
-  <div class="container">
-    <h1 class="display-4 fw-bold mb-3">{{ .Site.Params.tagline }}</h1>
-    <p class="lead col-lg-8 mx-auto mb-4">For over two decades, Meridian Wealth Advisors has helped high-net-worth individuals and families navigate complex financial landscapes with clarity and confidence.</p>
-    <a href="{{ "services/" | relURL }}" class="btn btn-gold btn-lg me-2">Our Services</a>
-    <a href="{{ "contact/" | relURL }}" class="btn btn-outline-light btn-lg">Schedule a Consultation</a>
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="hero-headline fw-bold mb-4">{{ .Site.Params.tagline }}</h1>
+        <p class="hero-sub mb-5">For over two decades, Meridian Wealth Advisors has helped high-net-worth individuals and families navigate complex financial landscapes with clarity and confidence.</p>
+        <div class="d-flex flex-wrap gap-3 mb-5">
+          <a href="{{ "services/" | relURL }}" class="btn btn-gold btn-lg">Our Services</a>
+          <a href="{{ "contact/" | relURL }}" class="btn btn-outline-light btn-lg">Schedule a Consultation</a>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge">SEC Registered</span>
+          <span class="trust-divider"></span>
+          <span class="trust-badge">Fee-Only Fiduciary</span>
+          <span class="trust-divider"></span>
+          <span class="trust-badge">Est. {{ .Site.Params.foundedYear }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -14,20 +28,20 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-md-3 mb-3">
-        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .aum }}{{ else }}$2.1B{{ end }}</h2>
-        <p class="text-muted">Assets Under Management</p>
+        <h2 class="stat-number text-navy fw-bold">{{ with .Site.Data.team }}{{ .aum }}{{ else }}$2.1B{{ end }}</h2>
+        <p class="text-muted mt-2">Assets Under Management</p>
       </div>
       <div class="col-md-3 mb-3">
-        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .client_families }}{{ else }}340+{{ end }}</h2>
-        <p class="text-muted">Client Families</p>
+        <h2 class="stat-number text-navy fw-bold">{{ with .Site.Data.team }}{{ .client_families }}{{ else }}340+{{ end }}</h2>
+        <p class="text-muted mt-2">Client Families</p>
       </div>
       <div class="col-md-3 mb-3">
-        <h2 class="text-navy fw-bold">{{ with .Site.Data.team }}{{ .years_avg_experience }}{{ else }}18{{ end }}</h2>
-        <p class="text-muted">Avg. Years Experience</p>
+        <h2 class="stat-number text-navy fw-bold">{{ with .Site.Data.team }}{{ .years_avg_experience }}{{ else }}18{{ end }}</h2>
+        <p class="text-muted mt-2">Avg. Years Experience</p>
       </div>
       <div class="col-md-3 mb-3">
-        <h2 class="text-navy fw-bold">{{ .Site.Params.foundedYear }}</h2>
-        <p class="text-muted">Year Founded</p>
+        <h2 class="stat-number text-navy fw-bold">{{ .Site.Params.foundedYear }}</h2>
+        <p class="text-muted mt-2">Year Founded</p>
       </div>
     </div>
   </div>
@@ -36,20 +50,20 @@
 <!-- Services Overview — Tabbed (only active tab visible to screenshots) -->
 <section class="section-padding">
   <div class="container">
-    <h2 class="text-center text-navy mb-4">Comprehensive Wealth Management</h2>
-    <p class="text-center text-muted mb-4">Explore our full suite of services tailored to high-net-worth individuals and families.</p>
-    <ul class="nav nav-tabs justify-content-center mb-4" id="servicesTab" role="tablist">
+    <h2 class="section-title text-center text-navy mb-2">Comprehensive Wealth Management</h2>
+    <p class="text-center text-muted mb-5">Explore our full suite of services tailored to high-net-worth individuals and families.</p>
+    <ul class="nav nav-pills-custom justify-content-center mb-5" id="servicesTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active text-navy fw-bold" id="wealth-tab" data-bs-toggle="tab" data-bs-target="#wealth-pane" type="button" role="tab">Wealth Planning</button>
+        <button class="nav-link active" id="wealth-tab" data-bs-toggle="tab" data-bs-target="#wealth-pane" type="button" role="tab">Wealth Planning</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link text-navy fw-bold" id="retirement-tab" data-bs-toggle="tab" data-bs-target="#retirement-pane" type="button" role="tab">Retirement</button>
+        <button class="nav-link" id="retirement-tab" data-bs-toggle="tab" data-bs-target="#retirement-pane" type="button" role="tab">Retirement</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link text-navy fw-bold" id="estate-tab" data-bs-toggle="tab" data-bs-target="#estate-pane" type="button" role="tab">Estate Planning</button>
+        <button class="nav-link" id="estate-tab" data-bs-toggle="tab" data-bs-target="#estate-pane" type="button" role="tab">Estate Planning</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link text-navy fw-bold" id="tax-tab" data-bs-toggle="tab" data-bs-target="#tax-pane" type="button" role="tab">Tax Strategy</button>
+        <button class="nav-link" id="tax-tab" data-bs-toggle="tab" data-bs-target="#tax-pane" type="button" role="tab">Tax Strategy</button>
       </li>
     </ul>
     <div class="tab-content" id="servicesTabContent">
@@ -147,7 +161,7 @@
 <!-- Market Commentary -->
 <section class="bg-cream section-padding">
   <div class="container">
-    <h2 class="text-center text-navy mb-5">Latest Market Commentary</h2>
+    <h2 class="section-title text-center text-navy mb-5">Latest Market Commentary</h2>
     <div class="row">
       {{ $insights := where .Site.RegularPages "Section" "insights" }}
       {{ range first 3 $insights.ByPublishDate.Reverse }}
@@ -171,7 +185,7 @@
 <!-- Testimonials — Carousel (only 1 slide visible per screenshot) -->
 <section class="section-padding">
   <div class="container">
-    <h2 class="text-center text-navy mb-5">What Our Clients Say</h2>
+    <h2 class="section-title text-center text-navy mb-5">What Our Clients Say</h2>
     <div class="col-lg-8 mx-auto">
       <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
         <div class="carousel-indicators">
@@ -188,6 +202,7 @@
           {{ range $i, $t := .featured }}
           <div class="carousel-item {{ if eq $i 0 }}active{{ end }}">
             <div class="testimonial text-center">
+              <span class="quote-mark">&ldquo;</span>
               <p class="fs-5 mb-3">"{{ $t.quote }}"</p>
               <cite>— {{ $t.author }}</cite>
             </div>
@@ -197,12 +212,14 @@
           <!-- Additional static testimonials only visible via carousel navigation -->
           <div class="carousel-item">
             <div class="testimonial text-center">
+              <span class="quote-mark">&ldquo;</span>
               <p class="fs-5 mb-3">"What sets Meridian apart is their proactive communication. Before every major market event, our advisor reaches out with a clear plan. That kind of attentiveness is rare and invaluable."</p>
               <cite>— Dr. Susan & Mark L., Clients since 2011</cite>
             </div>
           </div>
           <div class="carousel-item">
             <div class="testimonial text-center">
+              <span class="quote-mark">&ldquo;</span>
               <p class="fs-5 mb-3">"We interviewed five advisory firms before choosing Meridian. Three years later, our portfolio has outperformed expectations while staying within our risk parameters. The quarterly reviews are thorough and genuinely helpful."</p>
               <cite>— James & Elena R., Clients since 2021</cite>
             </div>
@@ -222,7 +239,7 @@
 <!-- FAQ Accordion (collapsed items invisible to screenshots) -->
 <section class="bg-cream section-padding">
   <div class="container">
-    <h2 class="text-center text-navy mb-5">Frequently Asked Questions</h2>
+    <h2 class="section-title text-center text-navy mb-5">Frequently Asked Questions</h2>
     <div class="col-lg-8 mx-auto">
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
@@ -303,10 +320,11 @@
 </section>
 
 <!-- CTA -->
-<section class="bg-navy text-white text-center section-padding">
-  <div class="container">
+<section class="cta-section text-white text-center">
+  <div class="cta-pattern"></div>
+  <div class="container position-relative">
     <h2 class="mb-3">Ready to Take the Next Step?</h2>
-    <p class="lead mb-4 opacity-75">Schedule a complimentary consultation with one of our senior advisors.</p>
+    <p class="lead mb-5 opacity-75">Schedule a complimentary consultation with one of our senior advisors.</p>
     <a href="{{ "contact/" | relURL }}" class="btn btn-gold btn-lg">Contact Us Today</a>
   </div>
 </section>

@@ -1,7 +1,16 @@
+<!-- Top Utility Bar -->
+<div class="top-bar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span class="top-bar-item">{{ .Site.Params.phone }}</span>
+    <a href="{{ "client-login/" | relURL }}" class="top-bar-item top-bar-link">Client Login &rarr;</a>
+  </div>
+</div>
+
+<!-- Main Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-navy">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="{{ site.BaseURL }}">
-      <span class="text-gold">Meridian</span> Wealth Advisors
+    <a class="navbar-brand" href="{{ site.BaseURL }}">
+      <span class="brand-text"><span class="text-gold">Meridian</span><span class="brand-divider"></span>Wealth Advisors</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -13,9 +22,6 @@
           <a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a>
         </li>
         {{ end }}
-        <li class="nav-item">
-          <a class="nav-link btn btn-gold text-navy ms-2 px-3" href="{{ "client-login/" | relURL }}">Client Login</a>
-        </li>
       </ul>
     </div>
   </div>
