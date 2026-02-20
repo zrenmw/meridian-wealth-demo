@@ -1,7 +1,7 @@
 name: Build and Deploy Meridian Wealth Demo
 
 on:
-  # Automated daily rebuild at 6 AM UTC (switch to weekly after initial setup: '0 6 * * 1')
+  # Automated daily rebuild at 6 AM UTC (12-day content rotation)
   schedule:
     - cron: '0 6 * * *'
 
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       force_variant:
-        description: 'Force a specific week variant (1-12)'
+        description: 'Force a specific day variant (1-12)'
         required: false
         default: ''
         type: string
