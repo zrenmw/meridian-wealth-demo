@@ -6,7 +6,7 @@ enableRobotsTXT = true
 [params]
   tagline = "Your Financial Future, Thoughtfully Managed"
   phone = "(212) 555-0187"
-  email = "info@meridianwealth.com"
+  email = "info@example.com"
   address = "745 Fifth Avenue, Suite 2100, New York, NY 10151"
   foundedYear = 2003
   secRegistration = "801-78452"

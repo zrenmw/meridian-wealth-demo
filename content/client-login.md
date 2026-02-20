@@ -30,6 +30,6 @@ type: "page"
 </div>
 
 <div class="text-center mt-4">
-  <p class="small text-muted">Having trouble accessing your account? Contact us at <a href="tel:2125550187">(212) 555-0187</a> or <a href="mailto:support@meridianwealth.com">support@meridianwealth.com</a>.</p>
+  <p class="small text-muted">Having trouble accessing your account? Contact us at <a href="tel:2125550187">(212) 555-0187</a> or <a href="mailto:support@example.com">support@example.com</a>.</p>
   <p class="small text-muted"><strong>Security Notice:</strong> Meridian Wealth Advisors will never ask for your password via email or phone. If you receive a suspicious request, please contact us immediately.</p>
 </div>

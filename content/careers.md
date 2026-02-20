@@ -21,6 +21,6 @@ At Meridian Wealth Advisors, we believe our people are our greatest asset. We fo
 
 ## General Inquiries
 
-Don't see a position that matches your background? We're always interested in hearing from talented professionals. Send your resume and a brief cover letter to [careers@meridianwealth.com](mailto:careers@meridianwealth.com).
+Don't see a position that matches your background? We're always interested in hearing from talented professionals. Send your resume and a brief cover letter to [careers@example.com](mailto:careers@example.com).
 
 *Meridian Wealth Advisors is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.*
