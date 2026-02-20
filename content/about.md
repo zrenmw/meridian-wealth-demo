@@ -22,11 +22,11 @@ After 15 years at Goldman Sachs, Catherine recognized that many high-net-worth i
 
 ## By the Numbers
 
-- **Assets Under Management:** $2.1 billion
-- **Client Families:** 340+
+- **Assets Under Management:** {{< data "team.aum" >}}
+- **Client Families:** {{< data "team.client_families" >}}
 - **Average Client Relationship:** 9.2 years
 - **Team Members:** 22
-- **Average Advisor Experience:** 18 years
+- **Average Advisor Experience:** {{< data "team.years_avg_experience" >}} years
 
 ## Registrations & Affiliations
 

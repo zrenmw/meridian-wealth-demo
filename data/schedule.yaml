@@ -1,67 +1,68 @@
 # Content rotation schedule for Meridian Wealth Advisors demo site
-# Each week entry maps to content variant files
+# 12-day rotation — every day produces exactly one visible compliance change
 # The activate-scheduled-content.sh script reads this file
 
-rotation_start: "2026-02-16"  # First Monday of rotation
-cycle_length_weeks: 12
+rotation_start: "2026-02-16"  # First day of rotation
+cycle_length_days: 12
 
-weeks:
+days:
   1:
-    description: "Disclosures: updated SEC filing, new risk factor"
+    description: "SEC filing amendment + 2 new risk factors"
     changes:
       - source: "disclaimers_v2.yaml"
         target: "disclaimers.yaml"
   2:
-    description: "Fee Schedule: management fee reduced"
+    description: "Fee reduction across all tiers"
     changes:
       - source: "fees_v2.yaml"
         target: "fees.yaml"
   3:
-    description: "Blog: Q1 Market Outlook appears, Q4 Review expires"
-    changes: []
-    # Blog posts use Hugo publishDate/expiryDate - no file swap needed
+    description: "Toll-free number + Saturday hours"
+    changes:
+      - source: "contact_v2.yaml"
+        target: "contact.yaml"
   4:
-    description: "Team: new VP added, associate promoted"
+    description: "Personnel changes (promotion + new hire)"
     changes:
       - source: "team_v2.yaml"
         target: "team.yaml"
   5:
-    description: "Disclosures + Footer: privacy data retention clause"
+    description: "DOL Fiduciary Rule compliance language"
     changes:
-      - source: "disclaimers_v2.yaml"
+      - source: "disclaimers_v3.yaml"
         target: "disclaimers.yaml"
   6:
-    description: "Wealth Planning: ESG investment options added"
-    changes: []
-    # Content change is in the markdown file via publishDate
+    description: "ESG Investment Analyst position posted"
+    changes:
+      - source: "careers_v3.yaml"
+        target: "careers.yaml"
   7:
-    description: "Fee Schedule: new Ultra HNW tier"
+    description: "Ultra HNW tier + minimum raised to $500K"
     changes:
       - source: "fees_v3.yaml"
         target: "fees.yaml"
   8:
-    description: "Blog: Estate Tax Changes post appears"
-    changes: []
-    # Blog post uses publishDate
+    description: "SEC Marketing Rule compliance + model risk"
+    changes:
+      - source: "disclaimers_v4.yaml"
+        target: "disclaimers.yaml"
   9:
-    description: "Careers: two positions posted, one removed"
+    description: "Careers reshuffled (Tax Strategist + Marketing)"
     changes:
       - source: "careers_v2.yaml"
         target: "careers.yaml"
   10:
-    description: "Disclosures: ADV updated, DOL fiduciary rule language"
+    description: "Robert Kim departs, AUM updated to $2.4B"
     changes:
-      - source: "disclaimers_v3.yaml"
-        target: "disclaimers.yaml"
-  11:
-    description: "Team + About: AUM updated, one member removed"
-    changes:
-      - source: "team_v2.yaml"
+      - source: "team_v3.yaml"
         target: "team.yaml"
-  12:
-    description: "Home testimonial rotated, fee minimum raised"
+  11:
+    description: "Client testimonials rotated"
     changes:
-      - source: "fees_v3.yaml"
-        target: "fees.yaml"
       - source: "testimonials_v2.yaml"
         target: "testimonials.yaml"
+  12:
+    description: "Family Office Services retainer tier added"
+    changes:
+      - source: "fees_v4.yaml"
+        target: "fees.yaml"

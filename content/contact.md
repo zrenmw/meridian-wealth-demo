@@ -46,20 +46,7 @@ Whether you're a prospective client or an existing client with questions, we're 
 
 ### Our Office
 
-{{ with .Site.Data.contact.office }}
-
-**{{ .name }}**
-{{ .address }}
-{{ .city }}
-
-**Phone:** [{{ .phone }}](tel:{{ .phone }})
-**Fax:** {{ .fax }}
-**Email:** [{{ .email }}](mailto:{{ .email }})
-
-**Office Hours:**
-{{ .hours }}
-
-{{ end }}
+{{< office-info >}}
 
 ### Directions
 

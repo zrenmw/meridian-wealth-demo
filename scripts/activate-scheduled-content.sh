@@ -4,8 +4,8 @@
 # based on the current date (or FORCE_VARIANT env var).
 #
 # Usage:
-#   ./scripts/activate-scheduled-content.sh          # Auto-detect week
-#   FORCE_VARIANT=3 ./scripts/activate-scheduled-content.sh  # Force week 3
+#   ./scripts/activate-scheduled-content.sh          # Auto-detect day
+#   FORCE_VARIANT=3 ./scripts/activate-scheduled-content.sh  # Force day 3
 
 set -euo pipefail
 
@@ -20,14 +20,14 @@ CYCLE_LENGTH=12
 
 echo "=== Meridian Content Activation ==="
 echo "Rotation start: $ROTATION_START"
-echo "Cycle length: $CYCLE_LENGTH weeks"
+echo "Cycle length: $CYCLE_LENGTH days"
 
-# Determine which week we're in
+# Determine which day we're in
 if [ -n "${FORCE_VARIANT:-}" ]; then
-    WEEK="$FORCE_VARIANT"
-    echo "FORCE_VARIANT set: activating week $WEEK"
+    DAY="$FORCE_VARIANT"
+    echo "FORCE_VARIANT set: activating day $DAY"
 else
-    # Calculate weeks since rotation start
+    # Calculate days since rotation start
     START_EPOCH=$(date -j -f "%Y-%m-%d" "$ROTATION_START" "+%s" 2>/dev/null || date -d "$ROTATION_START" "+%s")
     NOW_EPOCH=$(date "+%s")
     DIFF_SECONDS=$((NOW_EPOCH - START_EPOCH))
@@ -35,55 +35,53 @@ else
 
     # Handle dates before rotation start
     if [ "$DIFF_DAYS" -lt 0 ]; then
-        WEEK=1
+        DAY=1
     else
-        WEEK=$(( (DIFF_DAYS % CYCLE_LENGTH) + 1 ))
+        DAY=$(( (DIFF_DAYS % CYCLE_LENGTH) + 1 ))
     fi
     echo "Current date: $(date +%Y-%m-%d)"
     echo "Days since start: $DIFF_DAYS"
-    echo "Active period: $WEEK (of $CYCLE_LENGTH)"
+    echo "Active period: Day $DAY (of $CYCLE_LENGTH)"
 fi
 
 echo ""
-echo "--- Activating content for Week $WEEK ---"
+echo "--- Activating content for Day $DAY ---"
 
-# Define week-to-file mappings
-# Format: "week:source:target"
+# Define day-to-file mappings
+# Format: "day:source:target"
 MAPPINGS=(
     "1:disclaimers_v2.yaml:disclaimers.yaml"
     "2:fees_v2.yaml:fees.yaml"
+    "3:contact_v2.yaml:contact.yaml"
     "4:team_v2.yaml:team.yaml"
-    "5:disclaimers_v2.yaml:disclaimers.yaml"
+    "5:disclaimers_v3.yaml:disclaimers.yaml"
+    "6:careers_v3.yaml:careers.yaml"
     "7:fees_v3.yaml:fees.yaml"
+    "8:disclaimers_v4.yaml:disclaimers.yaml"
     "9:careers_v2.yaml:careers.yaml"
-    "10:disclaimers_v3.yaml:disclaimers.yaml"
-    "11:team_v2.yaml:team.yaml"
-    "12:fees_v3.yaml:fees.yaml"
-    "12:testimonials_v2.yaml:testimonials.yaml"
+    "10:team_v3.yaml:team.yaml"
+    "11:testimonials_v2.yaml:testimonials.yaml"
+    "12:fees_v4.yaml:fees.yaml"
 )
 
 # Start with base versions (v1)
 echo "Resetting to base versions..."
-for base in fees_v1.yaml team_v1.yaml disclaimers_v1.yaml careers_v1.yaml; do
+for base in fees_v1.yaml team_v1.yaml disclaimers_v1.yaml careers_v1.yaml contact_v1.yaml testimonials_v1.yaml; do
     target="${base/_v1/}"
     if [ -f "$DATA_DIR/$base" ]; then
         cp "$DATA_DIR/$base" "$DATA_DIR/$target"
         echo "  Reset: $target <- $base"
     fi
 done
-# Reset testimonials to original
-if [ -f "$DATA_DIR/testimonials.yaml" ]; then
-    echo "  Kept: testimonials.yaml (base)"
-fi
 
-# Apply changes for all weeks up to and including current week
+# Apply changes for all days up to and including current day
 # This ensures cumulative changes work correctly
 for mapping in "${MAPPINGS[@]}"; do
-    IFS=':' read -r map_week source target <<< "$mapping"
-    if [ "$map_week" -le "$WEEK" ]; then
+    IFS=':' read -r map_day source target <<< "$mapping"
+    if [ "$map_day" -le "$DAY" ]; then
         if [ -f "$DATA_DIR/$source" ]; then
             cp "$DATA_DIR/$source" "$DATA_DIR/$target"
-            echo "  Week $map_week: $target <- $source"
+            echo "  Day $map_day: $target <- $source"
         else
             echo "  WARNING: $source not found, skipping"
         fi

@@ -1,0 +1,48 @@
+footer_disclaimer: "Meridian Wealth Advisors is a registered investment adviser with the U.S. Securities and Exchange Commission (SEC). Registration does not imply a certain level of skill or training. Past performance is not indicative of future results. All investing involves risk, including the potential loss of principal. Meridian adheres to the DOL Fiduciary Rule for retirement account advisory services. Marketing materials are reviewed and approved in accordance with the SEC Marketing Rule (Rule 206(4)-1)."
+
+last_updated: "June 15, 2026"
+
+sec_filing: "ADV Part 2A amended June 15, 2026"
+sec_filing_link: "/documents/adv-part2a-2026-june.pdf"
+
+risk_factors:
+  - "Market risk: The value of investments may decline due to market conditions."
+  - "Interest rate risk: Changes in interest rates may affect the value of fixed-income investments."
+  - "Inflation risk: The purchasing power of invested assets may be eroded by inflation."
+  - "Liquidity risk: Certain investments may be difficult to sell at fair market value."
+  - "Concentration risk: Portfolios concentrated in specific sectors or asset classes may experience greater volatility."
+  - "Cybersecurity risk: Client accounts may be subject to unauthorized access or data breaches despite our security measures."
+  - "Geopolitical risk: International investments may be affected by political instability, sanctions, or trade restrictions."
+  - "Environmental risk: Climate-related events and regulatory changes may impact certain investments and sectors."
+  - "Model risk: Quantitative models used in portfolio construction and risk assessment are based on assumptions that may not hold under all market conditions."
+
+privacy_policy: |
+  Meridian Wealth Advisors is committed to protecting the privacy and confidentiality of our clients' personal information. We collect only the information necessary to provide our services and do not sell or share client data with third parties except as required by law or regulation.
+
+  Data Retention: Client records are retained for a minimum of seven (7) years following the termination of the advisory relationship, in accordance with SEC Rule 204-2. Digital records are stored using AES-256 encryption. Clients may request deletion of non-regulatory personal data by contacting our compliance department.
+
+  Our complete privacy policy is available upon request.
+
+fiduciary_statement: |
+  As a registered investment adviser, Meridian Wealth Advisors has a fiduciary duty to act in the best interest of our clients. We are committed to providing advice that is suitable, transparent, and aligned with each client's individual financial goals and risk tolerance.
+
+  DOL Fiduciary Compliance: Effective April 2026, Meridian Wealth Advisors has adopted enhanced fiduciary standards for all retirement account advisory services in compliance with the Department of Labor's updated Fiduciary Rule. This includes expanded documentation of investment recommendations, annual suitability reviews, and enhanced fee transparency for all ERISA-governed accounts.
+
+  SEC Marketing Rule Compliance: Effective June 2026, all Meridian marketing materials, including client testimonials, third-party ratings, and performance advertising, are reviewed and pre-approved by our Chief Compliance Officer in accordance with SEC Rule 206(4)-1. Hypothetical performance is presented only where accompanied by appropriate disclosures and is not the primary basis for any investment recommendation.
+
+regulatory_disclosures:
+  - title: "Form ADV"
+    description: "Our Form ADV Part 2A (Firm Brochure) has been updated to reflect SEC Marketing Rule compliance, DOL Fiduciary Rule adherence, and enhanced risk disclosures including model risk. Last amended June 2026."
+    link: "/documents/adv-part2a-2026-june.pdf"
+  - title: "Form CRS"
+    description: "Our Client Relationship Summary provides a brief overview of our services, fees, conflicts of interest, and disciplinary history. Updated to reflect fiduciary standards."
+    link: "/documents/form-crs-2026-updated.pdf"
+  - title: "DOL Fiduciary Compliance Statement"
+    description: "Our compliance statement detailing how Meridian adheres to the Department of Labor Fiduciary Rule for retirement account advisory services."
+    link: "/documents/dol-fiduciary-statement.pdf"
+  - title: "SEC Marketing Rule Compliance"
+    description: "Our policies and procedures for compliance with the SEC Marketing Rule (Rule 206(4)-1), including testimonial review, performance advertising standards, and third-party rating disclosures."
+    link: "/documents/sec-marketing-rule-policy.pdf"
+  - title: "Code of Ethics"
+    description: "Our Code of Ethics governs personal trading and ensures that client interests are placed ahead of firm and employee interests."
+    link: "/documents/code-of-ethics.pdf"

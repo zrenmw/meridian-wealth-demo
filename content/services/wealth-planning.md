@@ -37,4 +37,4 @@ We believe in:
 
 ### Minimum Account Size
 
-Our wealth planning services require a minimum investable asset base of $250,000. For accounts below $1,000,000, an annual financial planning fee applies. See our [Fee Schedule](/fee-schedule/) for complete details.
+Our wealth planning services require a minimum investable asset base of {{< data "fees.minimum" >}}. For accounts below $1,000,000, an annual financial planning fee applies. See our [Fee Schedule](/fee-schedule/) for complete details.
