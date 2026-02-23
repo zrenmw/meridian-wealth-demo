@@ -1,9 +1,9 @@
 name: Build and Deploy Meridian Wealth Demo
 
 on:
-  # Automated daily rebuild at 6 AM UTC (12-day content rotation)
+  # Automated daily rebuild at 1 AM UTC (12-day content rotation)
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 1 * * *'
 
   # Deploy on push to main
   push:
