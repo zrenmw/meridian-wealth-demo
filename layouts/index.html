@@ -5,6 +5,7 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-lg-8">
+        <div class="hero-accent-line"></div>
         <h1 class="hero-headline fw-bold mb-4">{{ .Site.Params.tagline }}</h1>
         <p class="hero-sub mb-5">For over two decades, Meridian Wealth Advisors has helped high-net-worth individuals and families navigate complex financial landscapes with clarity and confidence.</p>
         <div class="d-flex flex-wrap gap-3 mb-5">
@@ -24,7 +25,7 @@
 </section>
 
 <!-- Key Stats -->
-<section class="bg-cream section-padding">
+<section class="stats-section section-padding">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-3 mb-3">
@@ -50,6 +51,7 @@
 <!-- Services Overview — Tabbed (only active tab visible to screenshots) -->
 <section class="section-padding">
   <div class="container">
+    <span class="section-label">Our Services</span>
     <h2 class="section-title text-center text-navy mb-2">Comprehensive Wealth Management</h2>
     <p class="text-center text-muted mb-5">Explore our full suite of services tailored to high-net-worth individuals and families.</p>
     <ul class="nav nav-pills-custom justify-content-center mb-5" id="servicesTab" role="tablist">
@@ -161,6 +163,7 @@
 <!-- Market Commentary -->
 <section class="bg-cream section-padding">
   <div class="container">
+    <span class="section-label">Insights</span>
     <h2 class="section-title text-center text-navy mb-5">Latest Market Commentary</h2>
     <div class="row">
       {{ $insights := where .Site.RegularPages "Section" "insights" }}
@@ -185,6 +188,7 @@
 <!-- Testimonials — Carousel (only 1 slide visible per screenshot) -->
 <section class="section-padding">
   <div class="container">
+    <span class="section-label">Testimonials</span>
     <h2 class="section-title text-center text-navy mb-5">What Our Clients Say</h2>
     <div class="col-lg-8 mx-auto">
       <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
@@ -239,6 +243,7 @@
 <!-- FAQ Accordion (collapsed items invisible to screenshots) -->
 <section class="bg-cream section-padding">
   <div class="container">
+    <span class="section-label">FAQ</span>
     <h2 class="section-title text-center text-navy mb-5">Frequently Asked Questions</h2>
     <div class="col-lg-8 mx-auto">
       <div class="accordion" id="faqAccordion">
